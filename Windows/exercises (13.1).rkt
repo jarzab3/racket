@@ -1,0 +1,34 @@
+#lang racket
+
+
+(require racket/gui/base)
+(require racket/draw)
+(require racket/class)
+
+
+
+
+
+(define FRAME (new frame% [label "Graphic"] [width 500] [height 500]))
+
+
+(define frame (new frame%
+                   [label "Exercises"]
+                   [width 600]
+                   [height 400]))
+(new canvas% [parent frame]
+             [paint-callback
+              (lambda (canvas dc)
+                (send dc set-scale 3 3)
+                (send dc set-text-foreground "blue")
+                (send dc draw-text "Exercise 13.1" 0 0))])
+(send frame show #t)
+
+
+
+
+;;;;;;;;;  13.1
+
+
+
+

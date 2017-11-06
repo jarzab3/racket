@@ -1,0 +1,1 @@
+("6.2.1" ("0f9ad7478c5bb3a8c3fa5b39c342e5417cd849cf" . "45cbf7e35d2e555dc0f9ca6ccaaeda81ecef2ea5") (collects #"errortrace" #"errortrace-key.rkt") #"C:\\Users\\pc\\Desktop\\new program\\AsipMain.rkt" (collects #"racket" #"main.rkt") (collects #"racket" #"runtime-config.rkt"))

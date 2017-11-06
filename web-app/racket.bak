@@ -1,0 +1,21 @@
+#lang racket
+
+(require web-server/servlet
+web-server/servlet-env)
+
+(define (myresponse request)
+  (response/xexpr
+   '(html (head (title "Racket"))
+          (body
+           (h1 "This is a Title")
+           (p "paragraph"))
+         
+   )))
+
+(serve/servlet myresponse
+#:listen-ip #f
+#:port 8080
+#:servlet-path"/helloworld.rkt"
+#:launch-browser? #f)
+
+(serve/servlet myresponse)

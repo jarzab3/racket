@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Named Self-Executing Functions</title>
+    <script type="text/javascript">
+        // Define a variable to be accessed within the
+        // self-executing function block.
+        var counter = 0;
+        // Create a self-executing function block; however, rather
+        // than passing in an anonymous, headless function, let's
+        // pass in a named function.
+        (function useCounter(){
+            // Increment and log counter.
+            console.log( ++counter );
+            // Call *this* function again in after a short timeout.
+            // Since it has a name, we don't have to use the
+            // depracated arguments.callee property.
+            setTimeout( useCounter, 1000 );
+        })(); // Self-execute.
+    </script>
+</head>
+<body>
+    <!-- Intentionally left blank. -->
+</body>
+</html>

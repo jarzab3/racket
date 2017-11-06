@@ -1,0 +1,33 @@
+#lang racket
+
+(require net/smtp)
+(require net/head net/smtp)
+
+(require net/smtp-unit)
+
+(require openssl)
+
+
+(define l (list 1 2 2 3 3 4))
+
+(smtp-send-message  "jarzab3.nazwa.pl"          
+
+                    "adam@jarzebak.eu"                   
+
+                   '(jarzebak@outlook.com)                  
+
+                   "test"               
+
+                   '("l")            
+
+                   #:port-no 587                   
+
+                   #:auth-user  "adam@jarzebak.eu"              
+
+                    #:auth-passwd "Samsung2010"              
+
+                  ;  #:tcp-connect ssl-connect                   
+
+                   ; #:tls-encode ports->ssl-ports)
+
+)

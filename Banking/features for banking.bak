@@ -1,0 +1,41 @@
+#lang racket
+
+(require db)
+
+
+(define vc
+  (virtual-connection
+   (λ ()
+     (printf "connecting!\n")
+     (mysql-connect
+   #:user "jarzab3cx"
+   #:database "jarzab3cx"
+   #:server "sql.jarzab3cx.nazwa.pl"
+   #:port 3306
+   #:password "Racket123"))))
+
+
+
+
+
+
+
+( define ssd
+( lambda (lis)
+(for/list ([i lis]) (query vc "INSERT INTO student VALUE ;") lis)
+)
+)
+
+
+(define double-list2
+( lambda (l)
+(for/list ([i l]) (* 2 i))))
+
+   (define kumo (list "the" "very" "big" "dog"))
+
+(printf "~a~a~a" (first kumo)(fourth kumo)(second kumo))
+
+(define ins (λ ()
+
+              (query vc "INSERT INTO student VALUE ('Ada', 'Jarzebak', 'a@jarze.eu', 'jarzab3', '1234568', NOW(), NULL);")))
+

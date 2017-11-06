@@ -1,0 +1,15 @@
+#lang racket
+
+(struct film (title director duration))
+
+(define legend (film 'legend 'robinson 120))
+
+(define check (λ (x)
+                (cond
+                 ((equal? x 'sam ) (film-title legend))
+                 ("not by someone"))))
+
+(define un (λ (x)
+             (cond
+               ((film? x) (film-duration x))
+               ("not a film"))))

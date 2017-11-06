@@ -1,0 +1,29 @@
+
+#lang racket/gui 
+
+(define my-settings-hash (make-hash))
+(hash-set! my-settings-hash "label" "Test")
+(hash-set! my-settings-hash "width" 300)
+(hash-set! my-settings-hash "height" 300)
+(define my-tabs-list (list "Tab 0"
+                           "Tab 1"
+                           "Tab 2"))
+(define root-wnd (new frame% [label (hash-ref my-settings-hash "label")]
+                             [width (hash-ref my-settings-hash "width")]
+                             [height (hash-ref my-settings-hash "height")]))
+(define tab-panel (new tab-panel%
+                             (parent root-wnd)
+                             (choices my-tabs-list)
+                             (callback
+                               (lambda (tp e)
+                                (case (send tp get-selection)
+                                 ((0) (send tp change-children (lambda (children) (list a-panel))))
+                                 ((1) (send tp change-children (lambda (children) (list b-panel))))
+                                 ((2) (send tp change-children (lambda (children)
+                                                                 (list a-panel)))))))))
+(define a-panel (new panel% (parent tab-panel)))
+(define a-text (new message% (parent a-panel) (label "A-panel")))
+(define b-panel (new panel% (parent tab-panel)))
+(define b-text (new message% (parent b-panel) (label "b-panel")))
+
+(send root-wnd show #t)

@@ -1,0 +1,28 @@
+#lang racket
+
+(require "AsipMain.rkt")
+
+(define lights (list  13 12 11    10 9 8   7 6 5 ))
+(define test (list 1 0 1 1 1 1 0 1))
+
+
+(for/list [(n lights)]
+           (+ 3 n))
+
+
+(define d-input (1 1 1 1 0 0 1 0))
+
+
+(define d (λ (x)
+            (cond
+            ((null? x) '())
+            ((equal (first d-input) 1)
+            (λ (x) (digital-write (first leds) HIGH)))
+            ((equal (first d-input) 0)
+            (λ (x) (digital-write (first leds) HIGH)))
+            
+            
+
+
+
+               

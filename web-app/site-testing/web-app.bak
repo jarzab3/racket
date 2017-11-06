@@ -1,0 +1,67 @@
+#lang racket
+
+(require web-server/servlet
+ web-server/servlet-env)
+
+
+(define
+ (myresponse request)
+  (define bindings (request-bindings request))
+  
+(cond
+ ((exists-binding? `name bindings)
+
+(define myname (extract-binding/single `name bindings))
+
+
+
+(response/xexpr
+
+`(html (head
+                  (title "Attendance Submited!")
+                
+(link ([rel "stylesheet"] [type "text/css"] [href "/style.css"]))
+ (script ([type "text/javascript"] [src "/java.js"]))
+
+       )
+
+(body
+(h1 "Submited")
+
+(div ((class "name"))
+     
+(p "Hi " ,myname)
+)
+
+
+))))
+
+(else
+
+
+(response/xexpr
+`(html (head
+        (title "Attendance")
+              
+                
+(link ([rel "stylesheet"] [type "text/css"] [href "/style.css"]))
+ (script ([type "text/javascript"] [src "/java.js"]))
+
+       )
+
+(body
+
+
+(h1 "Please enter your ID number!")
+
+(form
+
+ (br)
+ (br)
+(input ((name "name")))
+
+(input ((type "submit"))))))))
+
+))
+
+(serve/servlet myresponse)

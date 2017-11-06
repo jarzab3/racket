@@ -1,0 +1,20 @@
+#lang racket
+
+(struct stack (list))
+
+(define (make-stack)(stack'()))
+
+(define list->stack stack)
+
+(define stack->list stack-list)
+
+(define empty-stack? (compose null? stack-list))
+
+(define size (compose length stack-list))
+
+(define top (compose car stack-list))
+
+(define pop (compose stack cdr stack-list))
+
+(define (push s el)(stack (cons el (stack-list s))))
+

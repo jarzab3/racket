@@ -1,0 +1,1 @@
+("6.3" ("2f10c8f9425abc6c82806d4c2a8891a00a420a0f" . "d392b5950266bdce610396ac392499fa00549fa9") #"C:\\Users\\jarze\\Desktop\\RACKET - progrmas\\Banking\\mail.rkt" (collects #"db" #"main.rkt") (collects #"net" #"url.rkt") (collects #"racket" #"gui" #"base.rkt") (collects #"racket" #"main.rkt") (collects #"racket" #"runtime-config.rkt") (collects #"wxme" #"read.rkt"))

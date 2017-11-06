@@ -1,0 +1,19 @@
+#lang racket
+(require "oauth-single-user.rkt")
+
+(define myAuthenticationParameters (new oauth-single-user%
+[consumer-key "CHANGEME"] ;; API key
+[consumer-secret
+"CHANGEME"] ;; API secret
+[access-token
+"CHANGEME"] ;; access token
+[access-token-secret
+"CHANGEME"] ;; access token secret
+))
+
+
+
+(send myAuthenticationParameters
+post-request "https://api.twitter.com/1.1/statuses/update.json"
+(list (cons ’status "Hello World, this is my second tweet from Racket!"))
+

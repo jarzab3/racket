@@ -1,0 +1,27 @@
+#lang racket
+
+(require "AsipMain.rkt")
+
+;; asip minimal program to blink pin 13 every second
+
+(define preliminaryOperationsForMyCode 
+  (λ ()
+    (open-asip)  
+    (set-pin-mode! 13 OUTPUT_MODE)
+    ) ;; end of lambda
+  ) ;; end of setup
+
+
+(define myFantasticApplication 
+  (λ ()
+    (digital-write 13 HIGH)
+    (sleep 1)
+    (digital-write 13 LOW)
+    (sleep 1)
+    (myFantasticApplication)
+    )
+  )
+
+(preliminaryOperationsForMyCode)
+(myFantasticApplication)
+

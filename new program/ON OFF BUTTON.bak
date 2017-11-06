@@ -1,0 +1,67 @@
+#lang racket
+(provide
+ mo
+ )
+
+(require racket/gui/base)
+
+(require "AsipMain.rkt")
+
+
+(define my 
+  (λ ()
+    (open-asip)  
+    (set-pin-mode! 48 OUTPUT_MODE)
+  
+    
+))
+
+
+
+(define frame1 (new frame%
+[label "click"]
+[width 450] [height 300]))
+
+(define panel (new vertical-panel% [parent frame1]))
+
+
+(define crt void) ; current running thread 
+          
+
+(new button% [ parent frame1 ]
+     [label "option"]
+     [ callback (λ (button event)
+                  (cond ( (not (equal? crt void))
+                          (kill-thread crt)
+                          (set! crt (thread mo))
+                        )
+                        (else (set! crt (thread mo)))
+                        ))])
+
+(new button% [ parent frame1 ]
+     [label "Stop"]
+     [ callback (λ (button event)
+                  (cond ( (not (equal? crt void))
+                          (kill-thread crt)
+                         
+                           (clear-arduino-pin! 12)
+                          )))])
+(define s (λ ()(sleep 0.25)))
+
+(define mo
+  (λ ()
+    (digital-write 48 HIGH)
+
+    ))
+
+
+
+(define mo
+  (λ ()
+    (digital-write 48 LOW)
+
+    ))
+
+(my)
+(mo)
+

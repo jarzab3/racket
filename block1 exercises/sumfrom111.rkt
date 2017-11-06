@@ -1,0 +1,19 @@
+#lang racket
+
+
+
+(define xxx (λ (n)
+              ( cond
+                 ((= n 1) 1)
+                 (#t (+ n ( xxx (- n 1)))))))
+
+
+
+
+( define sumfrom (λ (n)
+                   ( cond
+                      ((= n 1) 1 )
+                      (#t (* n
+                             (sumfrom (- n 1)))))))
+
+

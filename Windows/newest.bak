@@ -1,0 +1,44 @@
+#lang racket
+(require racket/gui/base)
+
+
+
+(define fun12 (λ (x)
+                (cond
+                  ((not(list? x)) "Please Input List")
+                  ((not(pair? x)) "Please Input Pairs")
+                  ((empty? x)(display "NIL"))
+                  (#t(cons (first(list-ref x 0)) (list(second(list-ref (reverse x) 0)))))
+                           )))
+
+
+(define ex1 (new frame%
+[label "My Window"]
+[width 450] [height 450]))
+
+
+(define ex2 (new text-field%
+(label "Input")
+(parent ex1)
+))
+(new button% [ parent ex1 ]
+[label "Calculate"]
+[callback (λ (x y)
+            (send result set-value
+                 (cond
+                  ;   ((not(list? x)) "Please Input List")
+                   ;  ((not(pair? x)) "Please Input Pairs")
+                     ((empty? x)(display "NIL"))
+                     (#t
+            (cons (first(list-ref x 0)) (list(second(list-ref (reverse x) 0)))))))
+           
+                     )]
+)
+(define result(new text-field%
+(label "result")
+(parent ex1)))
+(send ex1 show #t)
+
+
+
+

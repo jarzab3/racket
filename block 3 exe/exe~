@@ -1,0 +1,8 @@
+#lang racket
+
+
+ (define twitter-oauth (new oauth-single-user%
+    [consumer-key "AAAAAAAAAAA"]
+    [consumer-secret "BBBBBBBBBBB"]
+    [access-token "CCCCCCCCCCC"]
+    [access-token-secret "DDDDDDDDD"]))

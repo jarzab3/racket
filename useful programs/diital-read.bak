@@ -1,0 +1,24 @@
+#lang racket
+
+
+
+(require "AsipMain.rkt")
+
+
+(define my 
+  (λ ()
+    (open-asip)  
+    (set-pin-mode! 11 INPUT_MODE)
+    (set-pin-mode! 10 INPUT_MODE)
+     (set-pin-mode! 9 OUTPUT_MODE)
+    ))
+
+
+(define a (λ ()
+            (display (digital-read 11))
+            (sleep 0.5)
+          (display  (digital-read 10))
+            (sleep 0.5)
+(a)
+            
+            ))

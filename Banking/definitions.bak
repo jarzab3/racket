@@ -1,0 +1,27 @@
+#lang racket
+
+
+( define account %
+( class object %
+( super-new ) ;; Invokes superclass initialization
+( field ( balance 0)) ;; defines a field called balance
+( define / public (add n) ;; define the methods add
+( set! balance (+ n balance )))
+( define / public ( get-balance ) balance )
+)
+)
+
+
+
+
+
+
+
+
+( define savings % ( class account %
+( super-new )
+( field ( interest 0.04))
+( define / public ( add-interest )
+( send this add (* interest ( send this get-balance )))))
+)
+

@@ -1,0 +1,165 @@
+   body {
+    background-color: #OFF;
+    background-image: url("back.jpg");
+    
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+   
+      
+   #header {
+    background-color:OFF;
+    color:green;
+    text-align:center;
+    padding:5px;
+    font-size:30px;
+       }
+    
+    .clockStyle {
+	background-color:OFF;
+	border:#999 2px inset;
+	padding:6px;
+	color:#black;
+	font-family:"Arial Black", Gadget, sans-serif;
+    font-size:65px;
+    font-weight:bold;
+	letter-spacing: 2px;
+	display:inline;
+	position:absolute;
+	width:500px;
+    height:100px;
+    z-index:15;
+     top:47%;
+     left:50%;
+      margin:-300px 0 0 -260px;
+}
+    
+     #Content
+        {
+            border: 0px solid blue;
+            position: relative;
+            height: 400px;
+            width: 800px;
+            top:160px;
+        }
+          #un
+        {
+            border: 0px solid blue;
+            position: relative;
+            height: 150px;
+            width: 800px;
+            bottom: 20px;
+            top : 180px ;
+        }
+        
+           #divA
+        { 
+            position: absolute;
+            left: 150px;
+            top: 40px; 
+        }
+
+        #divB
+        {   
+            position: absolute;
+            right: 150px;
+            top: 40px;
+        }
+  
+       #but1
+        { 
+        font-size : 30px ;
+        width : 40px ;
+        height : 40px ;
+            position: absolute;
+            left: 105px;
+            top: 115px;     
+        }
+         #but2
+        { 
+        font-size : 30px ;
+        width : 40px ;
+        height : 40px ;
+            position: absolute;
+            left: 105px;
+            top: 165px;     
+        }
+        
+          #but3
+        { 
+        font-size : 30px ;
+        width : 40px ;
+        height : 40px ;
+            position: absolute;
+            right: 105px;
+            top: 115px;     
+        }
+         #but4
+        { 
+        font-size : 30px ;
+        width : 40px ;
+        height : 40px ;
+            position: absolute;
+            right: 105px;
+            top: 165px;     
+        }
+        
+          #but5
+        { 
+        font-size : 30px ;
+        width : 200px ;
+        height : 40px ;
+            position: absolute;
+            left: 300px;
+            bottom: 25px;  
+            background-color:yellow;   
+            border:1px solid #ffcc00;
+            -moz-border-radius:10px;
+            -webkit-border-radius:10px;
+        }
+        
+        
+span.display1 {
+    font-size:1150%;
+    color:black;
+    position : absolute ;
+    right: 30px;
+    bottom: 20px;
+    }
+    
+    span.display2 {
+    font-size:1150%;
+    color:black;
+    position : absolute ;
+    right: 30px;
+    bottom: 20px;
+    }
+
+
+p {
+    font-family: "Times New Roman";
+    font-size: 20px;
+}
+
+ .button {
+  color:#08233e;
+  font:2.4em Futura, ‘Century Gothic’, AppleGothic, sans-serif;
+  font-size:70%;
+  padding:14px;
+  background:url(overlay.png) repeat-x center #ffcc00;
+  background-color:rgba(255,204,0,1);
+  border:1px solid #ffcc00;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+  border-bottom:1px solid #9f9f9f;
+  -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  -webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.5);
+  cursor:pointer;
+ }
+ .button:hover {
+  background-color:rgba(255,204,0,0.8);
+ }

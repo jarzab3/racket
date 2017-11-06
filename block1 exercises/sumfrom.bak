@@ -1,0 +1,21 @@
+#lang racket
+
+
+
+;sumfrom(10) = 10 + (9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1)
+
+
+;sumfrom(10) = 10 + sumfrom(9)
+
+
+;sumfrom(n) = n + sumfrom(n − 1)
+
+
+;sumfrom (n) = n+ sumfrom (n-1) if n > 1
+;sumfrom (n) = 1 if n = 1
+
+
+(define sumfrom (λ (n)
+            ( cond
+            ((= n 1) 1)
+            (#t (+ n ( sumfrom (- n 1)))))))

@@ -1,0 +1,6 @@
+#lang racket
+(define a1(λ (a b c) (expt a b)(+ c a)))
+(a1 #xbea #o175443 #b0101110111)
+
+
+ 

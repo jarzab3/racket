@@ -1,0 +1,17 @@
+#lang racket
+
+
+;(define sumlist '(3 4 6 2))
+
+
+( define sumlist (λ (x)
+( cond
+(( null? x) 0)
+(#t (+ (first x) ( sumlist ( rest x )))))))
+
+
+( define remove-if (λ ( test x)
+( cond
+(( empty? x) '())
+(( test ( first x)) ( remove-if test ( rest x)))
+(#t ( cons ( first x) ( remove-if test ( rest x )))))))

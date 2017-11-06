@@ -1,0 +1,27 @@
+#lang racket
+
+
+(require racket/gui/base)
+
+
+(define window1 (new frame%
+                     [label "Banking"]
+                     [width 800] [height 600]  [alignment '(center center)]))
+
+
+
+(define bm (make-object bitmap% (get-pure-port
+                                 (string->url "https://www.austinbank.com/uploadfiles/Images/personal-banking/online-banking-banner.jpg"))))
+
+
+(define panel1 (new vertical-panel% [parent window1][style '(border)][alignment '(center top)] [vert-margin 0][min-height 172]
+                    [horiz-margin 0] [stretchable-width #f][stretchable-height #f])
+
+
+  (define panel1 (new vertical-panel% [parent window1][style '(border)][alignment '(center top)] [vert-margin 0][min-height 172]
+                    [horiz-margin 0] [stretchable-width #f][stretchable-height #f])
+
+
+
+(define panel1 (new vertical-panel% [parent window1][style '(border)][alignment '(center top)] [vert-margin 0][min-height 172]
+                    [horiz-margin 0] [stretchable-width #t][stretchable-height #f]))

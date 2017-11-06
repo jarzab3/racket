@@ -1,0 +1,35 @@
+#lang racket
+
+
+(define list1 '(a b c d e f))
+
+(define list2 '(1 2 3 4 5 6))
+
+
+
+
+(define my-third (λ ()
+                   (third list1)))
+
+(define my-last (λ ()
+                    (last list1)))
+
+
+
+(define my-first (λ ()(first list1)))
+
+(define one (λ ()
+                  (my-first)))
+
+
+(define tricky (λ (n f)
+               ((#t n)(length list2))
+                ((#t f)(first list2))
+                 ))
+                
+                
+                
+
+
+
+

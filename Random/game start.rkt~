@@ -1,0 +1,26 @@
+#lang racket
+
+(require racket/gui/base
+         racket/random
+	)
+
+
+
+(define window1 (new frame%
+                     [label "Game test"]
+                     [width 800] [height 600]  [alignment '(center center)]))
+
+
+(define panel_1 (new horizontal-panel% [parent window1][style '(border)][alignment '(center bottom)][vert-margin 0]
+                          [horiz-margin 0][stretchable-width #t][stretchable-height #t]))
+
+
+(define panel_2 (new horizontal-panel% [parent window1][style '(border)][alignment '(center bottom)][vert-margin 0]
+                          [horiz-margin 0][stretchable-width #t][stretchable-height #t]))
+
+
+
+
+
+
+(send window1 show #t)

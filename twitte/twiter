@@ -1,0 +1,36 @@
+#lang racket
+(require "oauth-single-user.rkt")
+ (require json)
+
+(define myAuthenticationParameters (new oauth-single-user%
+[consumer-key "8JyQ09i7bZpACndgFMIt2EF6F"] ;; API key
+[consumer-secret
+"wvUqkB5Sl3RGTZfbJHhTjvSfzRxvkqmZfPG56Qh7wqIKlqpzCb"] ;; API secret
+[access-token
+"699889208782147584-XtFx6BtdgjSrZYyrPbME4ioDtWcCH2j"] ;; access token
+[access-token-secret
+"QX07nxMJwbqOG91ZTSSSfyhM6foPxT2k4ePE7qzKCufey"] ;; access token secret
+))
+
+
+
+
+(define twitterResponse
+(bytes->jsexpr
+(first
+(send myAuthenticationParameters
+get-request
+"https://api.twitter.com/1.1/search/tweets.json"
+(list (cons 'q "AdamJarzebak") )
+))))
+
+(define statuses (hash-ref twitterResponse 'statuses))
+
+
+
+;(for ([tweet statuses])
+;(printf "The message is: ~a\n" (hash-ref tweet ’text)))
+
+;(send myAuthenticationParameters
+;post-request "https://api.twitter.com/1.1/statuses/update.json"
+;(list (cons 'status "Hello World, this is my second tweet from Racket!")))
